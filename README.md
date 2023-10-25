@@ -1,2 +1,2 @@
 # ArnoldRiley07.github.io
-Hello.
+Hello. This Twine story goes over the story of one Thomas Moore, specifically his trial and execution. It contains sixteen written passages, as well as a few purely user input passages. The player can play as a noble in the tumultuous court, or a peasant simply following along with the news. Based on the information inputted, the player can achieve different endings. Most of which is counterfactual, but there remains one accurate historical ending. 
