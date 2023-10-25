@@ -1,0 +1,156 @@
+:: StoryTitle
+Mini Assignment #2
+
+
+:: StoryData
+{
+  "ifid": "BF36A41E-0FAA-4307-BEC6-657515D35AE9",
+  "format": "Harlowe",
+  "format-version": "3.3.7",
+  "start": "Enter Your Name",
+  "zoom": 1
+}
+
+
+:: Act {"position":"325,600","size":"100,100"}
+An Act forcing subjects to accept the King’s second marriage, to Anne Boleyn, as well and true.
+
+
+:: ChurchHead {"position":"250,475","size":"100,100"}
+Supreme Head of the Church: Henry desires a male hair, which his first wife, Catherine, cannot seem to give him. He pursues other women and ends up with Anne Boleyn, but the Pope refuses to approve his divorce of Catherine. Enraged, Henry takes control of the Church of England, placing himself at the head.
+
+
+
+:: Enter Your Class {"position":"650,75","size":"100,100"}
+Pick your standing!
+
+(set: $noble to false)
+
+(dropdown: bind $noble, "Peasant","Noble")
+
+[[What's next?->What's next]]
+
+
+
+
+:: Enter Your Name {"position":"375,100","size":"100,100"}
+What is your name?
+
+(set: $help to"No")
+
+(input: bind $name)
+
+Next: [[Pick your social class->Enter Your Class]] 
+
+
+:: How well off are you? {"position":"625,300","size":"100,100"}
+How well off are you?
+
+(dropdown: bind $status, "Very well off","Not so well off")
+
+[[Cool!->The Beginning]]
+
+
+:: Next Up {"position":"775,200","size":"100,100"}
+(if: $noble is "Noble")[How close are you to the king? (dropdown: bind $krel, "Not so close","Very close")[[Next...->How well off are you?]]](else:)[[[You're a peasant->The Beginning]]]
+
+
+
+
+:: Passage10 {"position":"300,1100","size":"100,100"}
+Thomas Cromwell brings Richard Rich, who briefly spoke to Moore during his imprisonment, to the stand. Rich testifies that Moore told him he did not recognize the King as Head of the Church, which was an obvious fabrication. Despite that, amongst other evidence, it is enough for the Jury to declare Moore guilty and sentence him to execution.
+
+[[Does Moore finally break his silence?->Passage11]]
+
+
+:: Passage11 {"position":"750,1125","size":"100,100"}
+With his death set in stone, Moore speaks out at last regarding his true beliefs. He declares that he does not recognize Henry as the Head of the Church, and that all this business violated both the Magna Carta and the King’s Coronation Oath. (if: $noble is "Noble")[You watch the happenings in shock, knowing that even this won't save Moore.] (else:)[You hear that the room was unable to be swayed.] As expected, it changes very little. Initially set to be hung, the King orders Moore to instead be decapitated.
+
+(if: $noble is "Noble")[Do you intervene to try and help Moore? (dropdown: bind $help, "Yes", "No")] (else:)[It's a sad fate.]
+
+[[The Execution->Passage12]]
+
+
+:: Passage12 {"position":"375,1275","size":"100,100"}
+Moore is set to be executed on July 6th, 1535. He spends his final days up to the execution fasting and praying, keeping his famous composure through the very end. (if: $help is "Yes")[You plead the king to free Moore and merely send him out of the country instead of executing him.](if: $help is "No")[It's a sad fate.](else:)[(if: $krel is "Very close")[The king denies your plea, and briefly entertains the thought of executing you right after Moore. He decides not to, instead forcing you to swear an Oath that denies Moore's ideals.](else:)[[[He sends you off to the dungeons, trial pending.->Your Trial]]]]
+
+At around 9 o’clock in the morning, Moore is marched to the execution site, on Tower Hill. (if: $noble is "Noble")[You are able to attend the execution yourself, and witness the man's final moments. He] (else:)[He] says the following: “I die the King's good servant, and God's first,” forgives the executioner, and is subsequently decapitated.
+
+[[Legacy->Passage13]]
+
+
+:: Passage13 {"position":"775,1300","size":"100,100"}
+Moore’s death sends shockwaves all throughout the country, with many unable to believe the claims that he was a traitor. Although Moore’s ideals did not maintain the unity of the Church in England, his ironclad ideals and his refusal to bend make him a legend of perseverance even in death. You will remember him for as long as you live.
+
+
+:: Passage2 {"position":"425,375","size":"100,100"}
+It is said that Moore’s refusal to acknowledge Henry as the [[Supreme Head of the Church->ChurchHead]], as well as his choice not to attend the coronation of Anne Boleyn as Queen of England, has created a rift between the former Chancellor and the King. 
+
+[[Let's wait for the official announcement.->Passage3]]
+
+
+
+:: Passage3 {"position":"550,500","size":"100,100"}
+Moore’s complete refusal to take the oath recognizing the King as the Head of the Church only forces that rift to grow, pitting two friends against each other. Despite his intentions not being harmful, Moore’s choice to stay true to his beliefs put him at odds with the English nobles and the King. On April 13th, 1534, Moore is ordered to swear his allegiance to the [[Act of Succession->Act]] before a commission.
+
+[[What does he do?->Passage4]]
+
+
+:: Passage4 {"position":"700,625","size":"100,100"}
+Moore acknowledges Anne Boleyn’s coronation as Queen, but again refused the oath as it would deny papal supremacy and place the King at the top of the Church. He continues to stick to his principles and denies all attempts that would force him to compromise these ideals. On April 17th, shortly thereafter, he is imprisoned in the Tower of London, much to your surprise.
+
+[[What happens next?->Passage5]]
+
+
+:: Passage5 {"position":"500,700","size":"100,100"}
+The long imprisonment in the Tower, as well as the horrible living conditions, take their toll on Moore. His long political career, not to mention his reputation, are in a precarious situation thanks to his opposition. Even if he somehow survives this predicament, you’re unsure if Moore will ever hold a shred of political power again.
+
+[[How does Moore deal with this?->Passage6]]
+
+
+
+:: Passage6 {"position":"350,825","size":"100,100"}
+Moore’s health continues to deteriorate in the Tower. The cold, damp cells never do him any favor. He must endure all of this, in addition to isolation, all while still refusing to swear to the Oath. He maintains his silence on the matter. You’re unsure how a man can possess such fortitude. (if: $noble is "Noble")[You hear from your acquaintances that the king is furious.] (else:)[You can't believe it.]
+
+ (if: $noble is "Noble")[Do you want to attend the trial?] (else:)[Do you search for information about the trial?]
+
+[[Yes, of course->Passage7]]
+[[No, I'd rather not->Passage12]]
+
+
+:: Passage7 {"position":"750,800","size":"100,100"}
+Moore’s trial occurs over a year later, on July 1st, 1535. It is overseen by Moore’s successor as Lord Chancellor, Thomas Audley, in addition to Thomas Howard, Thomas Boleyn, and George Boleyn. (if: $noble is "Noble")[Thanks to your position, you're able to attend the trial yourself. Despite] (else:)[You hear later that despite] his imprisonment, Moore remains “cheerful and composed”. He is offered freedom and a kingly pardon if he revokes his opinion and takes the Oath.
+
+[[What does Moore do?->Passage8]]
+
+
+:: Passage8 {"position":"275,975","size":"100,100"}
+Moore says that even though he hadn’t taken the Oath or followed the full Act of Succession, he had never spoken against it either, therefore maintaining his silence on the matter. Because of that, it couldn’t be said that he was against them either. To maintain this complicated position, he refused to answer questions about his opinion, against the mounting pressure.
+
+[[Charges...->Passage9]]
+
+
+
+
+:: Passage9 {"position":"775,975","size":"100,100"}
+Additionally, Moore is charged in regards to the matter of Bishop Fisher, who was the stalwart supporter of Catherine, the King’s previous wife, in England. Moore was said to have encouraged Fisher’s “treason.” Moore denies this, saying that he merely told Fisher to follow his conscience. 
+
+[[The final nail in the coffin...->Passage10]]
+
+
+
+:: The Beginning {"position":"750,450","size":"100,100"}
+The year is 1534. You are (if: $noble is "Noble")[a noble] (else:)[a peasant] in England, in a time of great political turmoil. Thomas Moore, the former Lord Chancellor of England, who resigned just 2 years ago, has made an important decision that will decide his ultimate fate. Let’s take a close look at how the events unfolded, and why Moore refused to acknowledge King Henry VIII.
+
+
+[[Yippee!->Passage2]]
+
+
+:: What's next {"position":"500,225","size":"100,100"}
+(if: $noble is "Noble")[You, $name, will play the role of a noble in the passages!](else:)[You, $name, will play the role of a peasant in the passages!]
+
+[[Got it!->Next Up]]
+
+
+:: Your Trial {"position":"675,1400","size":"100,100"}
+(if: $status is "Very well off")[Your have many allies amongst the nobles, but few want to go against the king. That being said, thanks to help of those loyal to you, the king is willing to drop all charges if you swear an Oath that denies Moore's ideals and all he stands for. You agree to save your life.](else:)[Like Moore's, the trial is merely a sham. Fabricated evidence says you support Moore, and you are executed approximately two months after him.]
